@@ -17,11 +17,12 @@ const headerProps = {
 export default class UserCrud extends Component {
     state = { ...initialState }
 
-    componentWillMount() {
+    componentDidMount() {   //Método do react, executo após o componente ser montado
         axios(baseUrl).then(resp => {
             this.setState({ list: resp.data })
         })
     }
+
     clear() {
         this.setState({ user: initialState.user })
     }
@@ -139,7 +140,7 @@ export default class UserCrud extends Component {
     }
 
     render() {
-        console.log(this.state.list)
+        //console.log(this.state.list)
         return (
             <Main {...headerProps}>
                 {this.renderForm()}
