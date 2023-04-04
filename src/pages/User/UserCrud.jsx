@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Main from "../template/Main";
+import Main from "../../components/template/Main";
 import axios from 'axios';
 
 const baseUrl = 'http://localhost:3001/users'
@@ -18,7 +18,7 @@ export default class UserCrud extends Component {
     state = { ...initialState }
 
     componentDidMount() {   //Método do react, executo após o componente ser montado
-        axios(baseUrl).then(resp => {
+        fetch(baseUrl).then(resp => {
             this.setState({ list: resp.data })
         })
     }

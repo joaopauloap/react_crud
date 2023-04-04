@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from '../pages/Home/Home'
-import UserCrud from "../components/user/UserCrud";
+import UserCrud from "../pages/User/UserCrud";
 
 export default props =>(
 <Routes>
